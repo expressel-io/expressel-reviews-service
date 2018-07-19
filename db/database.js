@@ -6,7 +6,7 @@ const mysql = require('mysql');
 dbConnection = mysql.createConnection({
   user: 'root',
   password: null,
-  database: 'reviews'
+  database: 'reviews',
 });
 
 dbConnection.connect();
@@ -16,22 +16,17 @@ dbConnection.connect();
 const sources = ['Newegg.com', 'Costco.com', 'Target.com', 'Ebay.com', 'Walmart.com'];
 
 const generateReviews = () => { 
-  {
-    rating: Math.floor( Math.Random() * 5 ),
-    title: faker.lorem.sentence(),
-    date: faker.date.past(),
-    text: faker.lorem.paragraphs(),
-    source: sources[Math.floor(Math.Random() * 5)]    
+  for (let i = 0; i < 1000; i += 1) {
+    const rating = Math.floor(Math.Random() * 5);
+    const title = faker.lorem.sentence();
+    const date = faker.date.past();
+    const text = faker.lorem.paragraphs();
+    const source = sources[Math.floor(Math.Random() * 5)];
+    const query = 'INSERT INTO itemReviews (rating, title, date, text, source) VALUES (? ? ? ? ?)';
+    dbConnection.query(query, [rating, title, date, text, source]);
   }
-} 
+};
 
-const addReviews = () => {
-  for (let i = 0; i < 100; i += 1) {
-    let query = 'INTERT INTO itemReviews (rating, title, date, text, source) VALUES (? ? ? ? ?)';
-    
-    generateReviews()
-  }
-  
-}
+// Add generated data to the database
 
-//Add generated data to the database\\
+generateReviews();
