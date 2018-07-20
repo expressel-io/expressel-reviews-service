@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS reviews;
+
 CREATE DATABASE reviews;
 
 CREATE TABLE itemReviews (
@@ -8,6 +10,7 @@ CREATE TABLE itemReviews (
   text VARCHAR(2000),
   source VARCHAR(40) NOT NULL,
   item_id INT NOT NULL,
+  PRIMARY KEY (id)
 )
 
 CREATE TABLE items (
