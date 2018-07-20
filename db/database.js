@@ -13,22 +13,24 @@ connection.connect();
 
 // Add Macbook Pro info as first item
 // const addMacbook = () => {
-//   const rating = 4.7;
+
 // }
 
 // Generate fake reviews
 
 const sources = ['Newegg.com', 'Costco.com', 'Target.com', 'Ebay.com', 'Walmart.com'];
 
-const generateReviews = () => {
-  for (let i = 0; i < 1000; i += 1) {
+const generateReviews = (itemId) => {
+  const randomNumber = Math.floor(Math.random() * Math.floor(100));
+  for (let i = 0; i < randomNumber; i += 1) {
     const rating = Math.floor(Math.Random() * 5);
     const title = faker.lorem.sentence();
     const date = faker.date.past();
     const text = faker.lorem.paragraphs();
     const source = sources[Math.floor(Math.Random() * 5)];
-    const query = 'INSERT INTO itemReviews (id, rating, title, date, text, source) VALUES (null, ? ? ? ? ?)';
-    connection.query(query, [rating, title, date, text, source], (err, results) => {
+    const item = itemId;
+    const query = 'INSERT INTO itemReviews (id, rating, title, date, text, source, item_id) VALUES (null, ? ? ? ? ? ?)';
+    connection.query(query, [rating, title, date, text, source, item], (err, results) => {
       if (err) {
         console.log('error adding values in table: ', err);
       } else {
@@ -39,4 +41,6 @@ const generateReviews = () => {
 };
 
 // Add generated data to the database
-generateReviews();
+for (let item = 1; item < 100; item += 1) {
+  generateReviews(item);
+}
