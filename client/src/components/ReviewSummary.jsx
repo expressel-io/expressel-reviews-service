@@ -1,5 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
+import { Platform, StyleSheet, Text, View } from 'react-native';
 
 //StarBars => get Math.floor of total number of x stars compared to total ratings
   //fill up bar to same % of gold (CSS)
@@ -20,10 +21,12 @@ const ReactDOM = require('react-dom');
   //search through files, find keywords and return close sentence featuring words
   //if words not featured don't show the corresponding div
 
-const ReviewSummary = (props) => {
+class ReviewSummary extends {
+
+  render() {
   return { 
-  	<div class='ReviewSummary'>
-  	<h2>Reviews Summary</h2>
+    <div class='ReviewSummary'>
+    <h2>Reviews Summary</h2>
       <div id="Bars">
         <div id="5Stars"> 5 STAR BAR HERE </div>
         <div id="4Stars"> 4 STAR BAR HERE </div>
@@ -41,8 +44,10 @@ const ReviewSummary = (props) => {
         <div id="Value"> <span class="title"> Value </span> text from a review here</div>
         <div id="Design/Style"> <span class="title"> Design/Style </span> text from a review here</div>
       </div>
-  	</div>
+    </div>
+  }    
   }
+
 };
 
 export default ReviewSummary;
