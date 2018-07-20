@@ -2,7 +2,6 @@ const faker = require('faker');
 const mysql = require('mysql');
 
 // Create and connect database
-
 const connection = mysql.createConnection({
   user: 'root',
   password: null,
@@ -11,6 +10,32 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
+connection.query('CREATE DATABASE IF NOT EXISTS reviews;', (error) => {
+  if (error) {
+    throw error;
+  }
+});
+
+connection.query('USE reviews;', (error) => {
+  if (error) {
+    throw error;
+  }
+});
+
+connection.query(`CREATE TABLE IF NOT EXISTS itemReviews (
+  id INT NOT NULL AUTO_INCREMENT,
+  rating INT NOT NULL,
+  title VARCHAR(100) NOT NULL,
+  date DATE NOT NULL,
+  text VARCHAR(2000),
+  source VARCHAR(40) NOT NULL,
+  item_id INT NOT NULL,
+  PRIMARY KEY (id)
+  );`, (error) => {
+  if (error) {
+    throw error;
+  }
+});
 // Add Macbook Pro info as first item
 // const addMacbook = () => {
 

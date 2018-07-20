@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS reviews;
+CREATE DATABASE IF NOT EXISTS reviews;
 
-CREATE DATABASE reviews;
+USE reviews;
 
 CREATE TABLE itemReviews (
   id INT NOT NULL AUTO_INCREMENT,
@@ -11,10 +11,10 @@ CREATE TABLE itemReviews (
   source VARCHAR(40) NOT NULL,
   item_id INT NOT NULL,
   PRIMARY KEY (id)
-)
+);
 
 CREATE TABLE items (
   id INT,
   name VARCHAR(50),
-)
+);
 
