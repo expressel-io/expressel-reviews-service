@@ -12,13 +12,13 @@ connection.connect();
 
 connection.query('CREATE DATABASE IF NOT EXISTS reviews;', (error) => {
   if (error) {
-    throw error;
+    console.log('There was an error creating the databse', error);
   }
 });
 
 connection.query('USE reviews;', (error) => {
   if (error) {
-    throw error;
+    console.log('There was an error using the databse', error);
   }
 });
 
@@ -33,7 +33,7 @@ connection.query(`CREATE TABLE IF NOT EXISTS itemReviews (
   PRIMARY KEY (id)
   );`, (error) => {
   if (error) {
-    throw error;
+    console.log('There was an error creating the review table', error);
   }
 });
 // Add Macbook Pro info as first item
@@ -54,7 +54,7 @@ const generateReviews = (itemId) => {
     const text = faker.lorem.paragraphs();
     const source = sources[Math.floor(Math.Random() * 5)];
     const item = itemId;
-    const query = 'INSERT INTO itemReviews (id, rating, title, date, text, source, item_id) VALUES (null, ? ? ? ? ? ?)';
+    const query = 'INSERT INTO itemReviews (id, rating, title, date, text, source, item_id) VALUES (null, ?, ?, ?, ?, ?, ?)';
     connection.query(query, [rating, title, date, text, source, item], (err, results) => {
       if (err) {
         console.log('error adding values in table: ', err);
