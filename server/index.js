@@ -24,8 +24,9 @@ app.get(() => {
 
 // API calls
 
-app.get('/api/reviews', (req, res) => {
-  db.getAllReviews((error, results) => {
+app.get('/api/reviews/:itemId', (req, res) => {
+  console.log(req.params.itemId, 'itemId');
+  db.getAllReviews([req.params.itemId], (error, results) => {
     if (error) {
       console.log('Error getting the reviews: ', error);
     } else {
