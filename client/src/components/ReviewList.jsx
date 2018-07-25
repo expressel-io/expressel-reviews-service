@@ -22,7 +22,9 @@ class ReviewList extends React.Component {
 
   render() {
     return (
-      <div>Call Individual Reviews Here</div>
+      <div>
+        {this.state.reviews.map((review) => { return <IndividualReviews review={review} />; })}
+      </div>
     );
   }
 }

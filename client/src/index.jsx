@@ -12,11 +12,11 @@ class ReviewSection extends React.Component {
 
   render() {
     return (
-      <div class="ReviewSummary">
+      <div class='ReviewSummary'>
         <ReviewSummary/>
       </div>
-      <div> 
-        ReviewList
+      <div class='ReviewList'> 
+        <ReviewList/>
       </div>
     );
   }
