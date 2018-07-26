@@ -40,7 +40,7 @@ class ReviewList extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class='ReviewList'>
         {this.state.reviews.map((review) => { return <IndividualReviews review={review} onClick={this.handleGetAllReviewsClick}/>; })}
       </div>
     );
