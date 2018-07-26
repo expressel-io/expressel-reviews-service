@@ -1,7 +1,4 @@
 node_modules
-<<<<<<< HEAD
 client/dist/bundle.js
-=======
 .DS_Store
 client/.DS_Store
->>>>>>> review-summary
