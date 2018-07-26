@@ -10,18 +10,6 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
-connection.query('CREATE DATABASE IF NOT EXISTS reviews;', (error) => {
-  if (error) {
-    console.log('There was an error creating the databse', error);
-  }
-});
-
-connection.query('USE reviews;', (error) => {
-  if (error) {
-    console.log('There was an error using the databse', error);
-  }
-});
-
 connection.query(`CREATE TABLE IF NOT EXISTS itemReviews (
   id INT NOT NULL AUTO_INCREMENT,
   rating INT NOT NULL,
