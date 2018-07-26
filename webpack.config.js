@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname, '/client/src/index.jsx'),
+  entry: path.join(__dirname, '/client/src/index.jsx'),
   module: {
     rules: [
       {
@@ -12,10 +12,14 @@ module.exports = {
           presets: ['env', 'react'],
         },
       },
+      {
+        test: [/\.css$/],
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, '/client/dist'),
+    path: path.join(__dirname, '/client/dist'),
   },
 };
