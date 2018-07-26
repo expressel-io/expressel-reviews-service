@@ -34,6 +34,10 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
+<<<<<<< HEAD
       - run: npm run test
+=======
+      - run: npm test
+>>>>>>> master
 
 
