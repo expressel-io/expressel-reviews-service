@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS reviews;
 USE reviews;
 
 CREATE TABLE items (
-  id INT NOT NULL AUTO_INCREMENT,
+  id INT NOT NULL,
   name VARCHAR(50),
   PRIMARY KEY (id)
 );
