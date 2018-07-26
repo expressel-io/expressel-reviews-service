@@ -1,11 +1,11 @@
 const React = require('react');
 
-const AggregatedReviews = () => {
+const AggregatedReviews = (props) => {
   return (
-    <div class="AggregatedReviews">
+    <div className="AggregatedReviews">
       <div id="AvgRating"> NUMBER HERE </div>
       <div id="AvgStars"> STARS HERE </div>
-      <div id="TotalReviews">2,129 reviews</div>
+      <div id="TotalReviews">{props.reviews.length}</div>
     </div>
   )
 };
