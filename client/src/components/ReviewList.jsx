@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import IndividualReviews from './IndividualReviews.jsx';
 
 class ReviewList extends React.Component {
@@ -12,8 +11,10 @@ class ReviewList extends React.Component {
 
   render() {
     return (
-      <div className='ReviewList'>
-        {props.reviews.map((review) => { return <IndividualReviews review={review} onClick={props.onClick}/>; })}
+      <div className="ReviewList">
+        { props.reviews.map((review) => {
+          return <IndividualReviews review={review} onClick={props.onClick} />;
+        })}
       </div>
     );
   }

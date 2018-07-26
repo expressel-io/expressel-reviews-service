@@ -1,25 +1,26 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-import { Platform, StyleSheet, Text, View } from 'react-native';
 
-//StarBars => get Math.floor of total number of x stars compared to total ratings
-  //fill up bar to same % of gold (CSS)
-  //remainder/default color of bar will be grey (CSS)
-  //text will be x on left of bar and % will be right of bar
-  //x is bold
-  //% is normal weight
+// import { Platform, StyleSheet, Text, View } from 'react-native';
 
-//AggregatedReviews  
-  //AvgRating => reduce ratings rating to avg, display in AvgRating
-  //AvgStars => reduce ratings to avg, depending on rating 
-    //if rating is in ranges change the number of colored stars
-    //ie 5 stars = full five stars
-  //TotalReviews => ${Review count} reviews in blue
+// StarBars => get Math.floor of total number of x stars compared to total ratings
+// fill up bar to same % of gold (CSS)
+// remainder/default color of bar will be grey (CSS)
+// text will be x on left of bar and % will be right of bar
+// x is bold
+// % is normal weight
 
-//Snippets
-  //Titles bold
-  //search through files, find keywords and return close sentence featuring words
-  //if words not featured don't show the corresponding div
+// AggregatedReviews
+// AvgRating => reduce ratings rating to avg, display in AvgRating
+// AvgStars => reduce ratings to avg, depending on rating
+// if rating is in ranges change the number of colored stars
+// ie 5 stars = full five stars
+// TotalReviews => ${Review count} reviews in blue
+
+// Snippets
+// Titles bold
+// search through files, find keywords and return close sentence featuring words
+// if words not featured don't show the corresponding div
 
 class ReviewSummary extends React.Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class ReviewSummary extends React.Component {
   }
 
   render() {
-    return { 
+    return (
       <div class='ReviewSummary'>
       <h2>Reviews Summary</h2>
         <div id="Bars">
@@ -48,7 +49,7 @@ class ReviewSummary extends React.Component {
           <div id="Design/Style"> <span class="title"> Design/Style </span> text from a review here</div>
         </div>
       </div>
-    }    
+    );  
   }
 };
 
