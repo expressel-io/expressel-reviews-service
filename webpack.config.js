@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: path.join(__dirname, '/client/src/index.jsx'),
+  resolve: { extensions: ['.js', '.jsx'] },
   module: {
     rules: [
       {
