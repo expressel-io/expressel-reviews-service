@@ -41,10 +41,14 @@ const generateReviews = (itemId) => {
 
 // Should match up foreign key but hard coding item ids to match
 // Add generated data to the database
-for (let item = 1; item < 100; item += 1) {
-  connection.query('INSERT INTO items (id, name) VALUES (item, ?)', [faker.lorem.words()]);
-  generateReviews(item);
-}
+const generateItems = (num) => {
+  for (let item = 2; item < num; item += 1) {
+    connection.query('INSERT INTO items (id, name) VALUES (item, ?)', [faker.lorem.words()]);
+    generateReviews(num);
+  }
+};
+
+generateItems(100);
 
 const getAllReviews = (array, callback) => {
   const query = 'SELECT * FROM itemReviews WHERE item_id = ? ;';
