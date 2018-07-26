@@ -36,7 +36,7 @@ app.get('/api/reviews/:itemId', (req, res) => {
   });
 });
 
-app.get('/api/reviews/:itemId', (req, res) => {
+app.get('/api/reviews/first/:itemId', (req, res) => {
   console.log(req.params.itemId, 'itemId');
   db.getFirstReviews([req.params.itemId], (error, results) => {
     if (error) {
