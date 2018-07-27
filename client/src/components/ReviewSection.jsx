@@ -22,7 +22,9 @@ class ReviewSection extends React.Component {
   }
 
   getFirstReviews() {
-    axios.get(`/api/reviews/first/${this.state.itemId}`)
+
+    const { itemId } = this.state;
+    axios.get(`/api/${itemId}/reviews/first`)
       .then((response) => {
         this.setState({
           reviews: response.data.map(reviews => reviews),
@@ -34,7 +36,8 @@ class ReviewSection extends React.Component {
   }
 
   getAllReviews() {
-    axios.get(`/api/reviews/${this.state.itemId}`)
+    const { itemId } = this.state;
+    axios.get(`/api/${itemId}/reviews`)
       .then((response) => {
         this.setState({
           reviews: response.data.map(reviews => reviews),
@@ -47,7 +50,8 @@ class ReviewSection extends React.Component {
   }
 
   getAvgRating() {
-    axios.get(`/api/reviews/${this.state.itemId}/avg`)
+    const { itemId } = this.state;
+    axios.get(`/api/${itemId}/reviews/avg`)
       .then((response) => {
         this.setState({
           average: response.data,
@@ -64,10 +68,11 @@ class ReviewSection extends React.Component {
   }
 
   render() {
+    const { reviews, average } = this.state;
     return (
       <div>
-        <ReviewSummary reviews={ this.state.reviews } average={ this.state.average } />
-        <ReviewList reviews={ this.state.reviews } onClick={ this.handleGetAllReviewsClick } />
+        <ReviewSummary reviews={reviews} average={average} />
+        <ReviewList reviews={reviews} onClick={this.handleGetAllReviewsClick} />
       </div>
     );
   }

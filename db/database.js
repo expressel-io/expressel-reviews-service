@@ -10,32 +10,6 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
-connection.query('CREATE DATABASE IF NOT EXISTS reviews;', (error) => {
-  if (error) {
-    console.log('There was an error creating the databse', error);
-  }
-});
-
-connection.query('USE reviews;', (error) => {
-  if (error) {
-    console.log('There was an error using the databse', error);
-  }
-});
-
-connection.query(`CREATE TABLE IF NOT EXISTS itemReviews (
-  id INT NOT NULL AUTO_INCREMENT,
-  rating INT NOT NULL,
-  title VARCHAR(100) NOT NULL,
-  date DATE NOT NULL,
-  text VARCHAR(2000),
-  source VARCHAR(40) NOT NULL,
-  item_id INT NOT NULL,
-  PRIMARY KEY (id)
-  );`, (error) => {
-  if (error) {
-    console.log('There was an error creating the review table', error);
-  }
-});
 // Add Macbook Pro info as first item
 // const addMacbook = () => {
 
@@ -67,7 +41,38 @@ const generateReviews = (itemId) => {
 
 // Should match up foreign key but hard coding item ids to match
 // Add generated data to the database
-for (let item = 1; item < 100; item += 1) {
-  connection.query('INSERT INTO items (id, name) VALUES (item, ?)', [faker.lorem.words()]);
-  generateReviews(item);
-}
+const generateItems = (num) => {
+  for (let item = 2; item < num; item += 1) {
+    connection.query('INSERT INTO items (id, name) VALUES (item, ?)', [faker.lorem.words()]);
+    generateReviews(num);
+  }
+};
+
+generateItems(100);
+
+const getAllReviews = (array, callback) => {
+  const query = 'SELECT * FROM itemReviews WHERE item_id = ? ;';
+  connection.query(query, array, (err, results) => {
+    if (err) {
+      console.log('Error getting all reviews in db: ', err);
+    } else {
+      callback(null, results);
+    }
+  });
+};
+
+const getFirstReviews = (array, callback) => {
+  const query = 'SELECT * FROM itemReviews WHERE item_id = ? LIMIT 3;';
+  connection.query(query, array, (err, results) => {
+    if (err) {
+      console.log('Error getting first reviews in db: ', err);
+    } else {
+      callback(null, results);
+    }
+  });
+};
+
+module.exports = {
+  getAllReviews,
+  getFirstReviews,
+};
