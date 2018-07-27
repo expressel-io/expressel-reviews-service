@@ -23,7 +23,7 @@ app.get(() => {
 
 // API calls
 
-app.get('/api/reviews/:itemId', (req, res) => {
+app.get('/api/:itemId/reviews', (req, res) => {
   console.log(req.params.itemId, 'itemId');
   db.getAllReviews([req.params.itemId], (error, results) => {
     if (error) {
@@ -35,7 +35,7 @@ app.get('/api/reviews/:itemId', (req, res) => {
   });
 });
 
-app.get('/api/reviews/first/:itemId', (req, res) => {
+app.get('/api/:itemId/reviews/first', (req, res) => {
   console.log(req.params.itemId, 'itemId');
   db.getFirstReviews([req.params.itemId], (error, results) => {
     if (error) {
