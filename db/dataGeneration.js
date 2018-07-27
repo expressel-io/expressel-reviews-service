@@ -3,35 +3,35 @@ const connection = require('./database');
 
 // Generate fake reviews
 
-const macbookReviewOne = {
-  id: 1,
-  rating: 4,
-  title: 'A fantastic update let down by a poor keyboard and lack of ports',
-  date: 'April 15, 2018',
-  text: '',
-  source: '',
-  itemId: 1,
-};
+// const macbookReviewOne = {
+//   id: 1,
+//   rating: 4,
+//   title: 'A fantastic update let down by a poor keyboard and lack of ports',
+//   date: 'April 15, 2018',
+//   text: '',
+//   source: '',
+//   itemId: 1,
+// };
 
-const macbookReviewTwo = {
-  id: 2,
-  rating: 4,
-  title: '',
-  date: 'April 15, 2018',
-  text: '',
-  source: '',
-  itemId: 1,
-};
+// const macbookReviewTwo = {
+//   id: 2,
+//   rating: 4,
+//   title: '',
+//   date: 'April 15, 2018',
+//   text: '',
+//   source: '',
+//   itemId: 1,
+// };
 
-const macbookReviewThree = {
-  id: 3,
-  rating: 4,
-  title: '',
-  date: 'April 15, 2018',
-  text: '',
-  source: '',
-  itemId: 1,
-};
+// const macbookReviewThree = {
+//   id: 3,
+//   rating: 4,
+//   title: '',
+//   date: 'April 15, 2018',
+//   text: '',
+//   source: '',
+//   itemId: 1,
+// };
 
 const generateMacbook = () => {
   connection.query('INSERT INTO items (id, name) VALUES (item, 1);');
