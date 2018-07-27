@@ -47,5 +47,17 @@ app.get('/api/:itemId/reviews/first', (req, res) => {
   });
 });
 
+app.get('/api/:itemId/reviews/avg', (req, res) => {
+  console.log(req.params.itemId, 'itemId');
+  db.getFirstReviews([req.params.itemId], (error, results) => {
+    if (error) {
+      console.log('Error getting the average: ', error);
+    } else {
+      console.log('getting average');
+      res.send(results);
+    }
+  });
+});
+
 // start server
 app.listen(PORT, () => { console.log(`Listening at ${PORT}!`); });
