@@ -10,7 +10,7 @@ const IndividualReviews = (props) => {
       <div className="Stars"> <Stars rating={props.review.rating}/> </div>
       <div className="Text"> {props.review.text} </div>
     </div>
-  )
+  );
 };
 
 export default IndividualReviews;

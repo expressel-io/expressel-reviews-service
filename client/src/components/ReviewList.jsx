@@ -16,6 +16,9 @@ class ReviewList extends React.Component {
           return <IndividualReviews review={review} onClick={props.onClick} />;
         })}
       </div>
+      <div className="AllReviews">
+        <button className="AllReviewsButton">Read All Reviews</button> 
+      </div>
     );
   }
 }
