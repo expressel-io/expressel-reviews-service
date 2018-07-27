@@ -49,7 +49,7 @@ app.get('/api/:itemId/reviews/first', (req, res) => {
 
 app.get('/api/:itemId/reviews/avg', (req, res) => {
   console.log(req.params.itemId, 'itemId');
-  db.getFirstReviews([req.params.itemId], (error, results) => {
+  db.getAverage([req.params.itemId], (error, results) => {
     if (error) {
       console.log('Error getting the average: ', error);
     } else {
