@@ -9,9 +9,11 @@
   },
   "scripts": {
     "test": "jest",
-    "react-dev": "webpack -d --watch"
+    "react-dev": "webpack -d --watch",
+    "start": "nodemon server/index.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-core": "^6.26.3",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
