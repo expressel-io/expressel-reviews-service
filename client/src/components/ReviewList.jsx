@@ -1,5 +1,6 @@
 import React from 'react';
-import IndividualReviews from './IndividualReviews.jsx';
+import PropTypes from 'prop-types';
+import IndividualReviews from './IndividualReviews';
 
 const ReviewList = (props) => {
   const {
@@ -15,6 +16,16 @@ const ReviewList = (props) => {
       })}
     </div>
   );
+};
+
+ReviewList.propTypes = {
+  reviews: PropTypes.arrayof(PropTypes.object),
+  onClick: PropTypes.func,
+};
+
+ReviewList.defaultProps = {
+  reviews: [],
+  // onClick: {},
 };
 
 export default ReviewList;
