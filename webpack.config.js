@@ -1,21 +1,38 @@
-const path = require('path');
-
 module.exports = {
-  entry: path.resolve(__dirname, '/client/src/index.jsx'),
+<<<<<<< HEAD
+  entry: __dirname + '/client/src/index.jsx',
+=======
+  entry: path.join(__dirname, '/client/src/index.jsx'),
+  resolve: { extensions: ['.js', '.jsx'] },
+>>>>>>> master
   module: {
     rules: [
       {
-        test: [/\.jsx$/],
+        test: [/\.jsx?$/],
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
           presets: ['env', 'react'],
         },
       },
+      {
+<<<<<<< HEAD
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
+=======
+        test: [/\.css$/],
+        use: ['style-loader', 'css-loader'],
+      },
+>>>>>>> master
     ],
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, '/client/dist'),
+<<<<<<< HEAD
+    path: __dirname + '/client/dist',
+=======
+    path: path.join(__dirname, '/client/dist'),
+>>>>>>> master
   },
 };
