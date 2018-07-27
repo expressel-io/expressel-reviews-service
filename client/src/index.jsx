@@ -1,13 +1,5 @@
-<<<<<<< HEAD
-import ReactDOM from 'react-dom';
-import ReviewSection from './components/ReviewSection.jsx';
-
-ReactDOM.render(<ReviewSection />, document.getElementById('Reviews'));
-=======
-
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Reviews from './components/Reviews';
+import ReviewSection from './components/ReviewSection';
 
-ReactDOM.render(<Reviews />, document.getElementById('Reviews'));
->>>>>>> master
+ReactDOM.render(<ReviewSection />, document.getElementById('Reviews'));

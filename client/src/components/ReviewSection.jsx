@@ -8,8 +8,7 @@ class ReviewSection extends React.Component {
     super(props);
     this.state = {
       reviews: [],
-      itemId: 1,
-
+      itemId: 1, //
     };
     this.getAllReviews = this.getAllReviews.bind(this);
     this.handleGetAllReviewsClick = this.handleGetAllReviewsClick.bind(this);
@@ -22,10 +21,10 @@ class ReviewSection extends React.Component {
   }
 
   getFirstReviews() {
-    axios.get(`/api/reviews/first/${this.state.itemId}`)
+    axios.get(`/api/reviews/first/${this.state.itemId}`) //pagination have it make --url/query parameters ? in the url
       .then((response) => {
         this.setState({
-          reviews: response.data.map(reviews => reviews),
+          reviews: response.data.map(reviews => reviews), //
         });
       })
       .catch((error) => {
@@ -34,7 +33,8 @@ class ReviewSection extends React.Component {
   }
 
   getAllReviews() {
-    axios.get(`/api/reviews/${this.state.itemId}`)
+    const { itemId, reviews, average } = this.state;
+    axios.get(`/api/reviews/${itemId}`)
       .then((response) => {
         this.setState({
           reviews: response.data.map(reviews => reviews),
@@ -47,7 +47,7 @@ class ReviewSection extends React.Component {
   }
 
   getAvgRating() {
-    axios.get(`/api/reviews/${this.state.itemId}/avg`)
+    axios.get(`/api/reviews/${itemId}/avg`)
       .then((response) => {
         this.setState({
           average: response.data,
@@ -66,8 +66,8 @@ class ReviewSection extends React.Component {
   render() {
     return (
       <div>
-        <ReviewSummary reviews={ this.state.reviews } average={ this.state.average } />
-        <ReviewList reviews={ this.state.reviews } onClick={ this.handleGetAllReviewsClick } />
+        <ReviewSummary reviews={ reviews} average={ average } />
+        <ReviewList reviews={ reviews } onClick={ this.handleGetAllReviewsClick } />
       </div>
     );
   }
