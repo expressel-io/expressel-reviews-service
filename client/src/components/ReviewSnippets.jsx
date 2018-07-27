@@ -1,6 +1,6 @@
 const React = require('react');
 
-const ReviewSnippets = () => {
+const ReviewSnippets = (props) => {
   return (
     <div id="Ease"> <span class="title"> Ease of Use </span> text from a review here</div>
     <div id="Value"> <span class="title"> Value </span> text from a review here</div>
