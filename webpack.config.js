@@ -1,10 +1,6 @@
 module.exports = {
-<<<<<<< HEAD
   entry: __dirname + '/client/src/index.jsx',
-=======
-  entry: path.join(__dirname, '/client/src/index.jsx'),
   resolve: { extensions: ['.js', '.jsx'] },
->>>>>>> master
   module: {
     rules: [
       {
@@ -16,23 +12,13 @@ module.exports = {
         },
       },
       {
-<<<<<<< HEAD
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      }
-=======
         test: [/\.css$/],
         use: ['style-loader', 'css-loader'],
       },
->>>>>>> master
     ],
   },
   output: {
     filename: 'bundle.js',
-<<<<<<< HEAD
     path: __dirname + '/client/dist',
-=======
-    path: path.join(__dirname, '/client/dist'),
->>>>>>> master
   },
 };
