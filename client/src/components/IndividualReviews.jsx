@@ -1,16 +1,32 @@
-import Stars from './Stars.jsx';
+import Stars from './Stars';
 
 const React = require('react');
 
 const IndividualReviews = (props) => {
+  const { review } = props;
+  const {
+    title,
+    source,
+    rating,
+    text,
+  } = review;
+
   return (
     <div className="IndividualReview">
-      <div className="Title"> {props.review.title} </div>
-      <div className="Source"> {props.review.source} </div>
-      <div className="Stars"> <Stars rating={props.review.rating}/> </div>
-      <div className="Text"> {props.review.text} </div>
+      <div className="Title">
+        {title}
+      </div>
+      <div className="Source">
+        {source}
+      </div>
+      <div className="Stars">
+        <Stars rating={rating} />
+      </div>
+      <div className="Text">
+        {text}
+      </div>
     </div>
-  )
+  );
 };
 
 export default IndividualReviews;

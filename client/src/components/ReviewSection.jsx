@@ -1,15 +1,14 @@
 const React = require('react');
 const axios = require('axios');
-const ReviewSummary = require('./ReviewSummary.jsx');
-const ReviewList = require('./ReviewList.jsx');
+const ReviewSummary = require('./ReviewSummary');
+const ReviewList = require('./ReviewList');
 
 class ReviewSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       reviews: [],
-      itemId: 1,
-
+      itemId: '',
     };
     this.getAllReviews = this.getAllReviews.bind(this);
     this.handleGetAllReviewsClick = this.handleGetAllReviewsClick.bind(this);
@@ -20,14 +19,14 @@ class ReviewSection extends React.Component {
   componentDidMount() {
     this.getFirstReviews();
   }
+// pagination have it make --url/query parameters ? in the url
 
   getFirstReviews() {
-
     const { itemId } = this.state;
     axios.get(`/api/${itemId}/reviews/first`)
       .then((response) => {
         this.setState({
-          reviews: response.data.map(reviews => reviews),
+          reviews: response.data, //
         });
       })
       .catch((error) => {
@@ -40,13 +39,12 @@ class ReviewSection extends React.Component {
     axios.get(`/api/${itemId}/reviews`)
       .then((response) => {
         this.setState({
-          reviews: response.data.map(reviews => reviews),
+          reviews: response.data,
         });
       })
       .catch((error) => {
         console.log('There was an error getting all reviews: ', error);
       });
-    console.log('In get all reviews!');
   }
 
   getAvgRating() {
