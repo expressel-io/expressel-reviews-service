@@ -1,7 +1,7 @@
 const React = require('react');
 const axios = require('axios');
-const ReviewSummary = require('./ReviewSummary.jsx');
-const ReviewList = require('./ReviewList.jsx');
+const ReviewSummary = require('./ReviewSummary');
+const ReviewList = require('./ReviewList');
 
 class ReviewSection extends React.Component {
   constructor(props) {
