@@ -4,10 +4,9 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/hrsf99-Expressel/expressel-cart-service
+  - https://github.com/hrsf99-Expressel/expressel-item-gallery-service
+  - https://github.com/hrsf99-Expressel/expressel-similar-Items-service
 
 ## Table of Contents
 
