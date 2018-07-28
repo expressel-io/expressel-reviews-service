@@ -25,6 +25,7 @@ class ReviewSection extends React.Component {
     const { itemId } = this.state;
     axios.get(`/api/${itemId}/reviews/first`)
       .then((response) => {
+        console.log(response.data);
         this.setState({
           reviews: response.data, //
         });

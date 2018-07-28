@@ -29,7 +29,7 @@ app.get('/api/:itemId/reviews', (req, res) => {
     if (error) {
       console.log('Error getting the reviews: ', error);
     } else {
-      console.log('getting reviews');
+      console.log('getting reviews', results);
       res.send(results);
     }
   });
