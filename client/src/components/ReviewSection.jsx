@@ -8,7 +8,7 @@ class ReviewSection extends React.Component {
     super(props);
     this.state = {
       reviews: [],
-      itemId: 1, //
+      itemId: '',
     };
     this.getAllReviews = this.getAllReviews.bind(this);
     this.handleGetAllReviewsClick = this.handleGetAllReviewsClick.bind(this);
@@ -45,7 +45,6 @@ class ReviewSection extends React.Component {
       .catch((error) => {
         console.log('There was an error getting all reviews: ', error);
       });
-    console.log('In get all reviews!');
   }
 
   getAvgRating() {
