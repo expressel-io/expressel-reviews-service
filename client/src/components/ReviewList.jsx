@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import IndividualReviews from './IndividualReviews';
+const React = require('react');
+const PropTypes = require('prop-types');
+const IndividualReviews = require('./IndividualReviews');
 
 const ReviewList = (props) => {
   const {
@@ -11,9 +11,12 @@ const ReviewList = (props) => {
     <div className="ReviewList">
       { reviews.map((review) => {
         return (
-          <IndividualReviews review={review} onClick={onClick} />
+          <IndividualReviews review={review} />
         );
       })}
+      <button type="button" onClick={onClick}>
+        ALL REVIEWS
+      </button>
     </div>
   );
 };
