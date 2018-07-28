@@ -1,0 +1,80 @@
+body {
+  font-color: #212121;
+  height: 100%;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  font-family: 'Roboto','Helvetica-neue',sans-serif;
+  font-size: 14px;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+div {
+  display: block;
+}
+
+.AggregatedReviews {
+
+}
+
+#AvgRating {
+  font-size: 28px;
+  
+}
+
+#TotalReviews {
+
+}
+
+.ReviewSummary {
+  padding: 16px 16px 0;
+}
+
+.AllReviewsButton {
+  
+}
+
+.ReviewList {
+  padding: 16px 16px 0;
+}
+
+.Title {
+  font-weight: 700;
+  display: block;
+  font-size: 24px;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  color: rgba(0,0,0,0.87);
+}
+
+.Source {
+  font-color: rgba(0,0,0,0.54);
+  margin-top: 8px;
+}
+
+.Date {
+  margin-top: 8px;
+  flex-direction: row;
+  box-sizing: border-box!important;
+  display: flex!important;
+  color: rgba(0,0,0,0.87);
+}
+
+.Text {
+  font-color: #2B2B2B;
+  margin-top: 16px;
+  line-height: 1.72em;
+  color: rgba(0,0,0,0.87);
+}
+
+.ReviewSnippets {
+
+}
