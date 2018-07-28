@@ -1,4 +1,4 @@
-import Stars from './Stars.jsx';
+import Stars from './Stars';
 
 const React = require('react');
 

@@ -1,11 +1,18 @@
 const React = require('react');
+const $ = require('jquery');
+const FullStar = require('../../dist/filledStar.png');
+const EmptyStar = require('../../dist/emptyStar.png');
 
 const Stars = (props) => {
   const { rating } = props;
-  if (Math.floor(rating) === 0) {
-    return (
-      <div className="Stars"> Take rating from props and render accordingly </div>
-    );
+  let starNum = Math.floor(rating);
+  for (let i = 0; i < 5; i += 1) {
+    if (starNum > 0) {
+      starNum -= 1;
+      $(this).closest('.Stars').append(<img src={FullStar} alt="FullStar" />);
+    } else {
+      $(this).closest('.Stars').append(<img src={EmptyStar} alt="EmptyStar" />);
+    }
   }
 };
 
