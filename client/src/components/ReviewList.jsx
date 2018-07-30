@@ -22,12 +22,12 @@ const ReviewList = (props) => {
 };
 
 ReviewList.propTypes = {
-  reviews: PropTypes.arrayof(PropTypes.object),
-  onClick: PropTypes.func,
+  //reviews: PropTypes.arrayof(PropTypes.object),
+  //onClick: PropTypes.func,
 };
 
 ReviewList.defaultProps = {
-  reviews: [],
+  //reviews: [],
   // onClick: {},
 };
 
