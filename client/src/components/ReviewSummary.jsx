@@ -1,5 +1,7 @@
 const React = require('react');
-const ReactDOM = require('react-dom');
+const axios = require('axios');
+const AggregatedReviews = require('./AggregatedReviews');
+const Snippets = require('./ReviewSnippets');
 
 // import { Platform, StyleSheet, Text, View } from 'react-native';
 
@@ -25,9 +27,33 @@ const ReactDOM = require('react-dom');
 class ReviewSummary extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      FiveStar: '',
+      FourStar: '',
+      ThreeStar: '',
+      TwoStar: '',
+      OneStar: '',
+    };
+  }
+
+  getTotalRatingsPerRating() {
+    axios.get(`/api/${itemId}/reviews/ratings`)
+      .then((response) => {
+        this.setState({
+          FiveStar: '',
+          FourStar: '',
+          ThreeStar: '',
+          TwoStar: '',
+          OneStar: '',
+        });
+      })
+      .catch((error) => {
+        console.log('There was an error getting the average rating: ', error);
+      });
   }
 
   render() {
+    const { average, reviews } = props;
     return (
       <div class='ReviewSummary'>
       <h2>Reviews Summary</h2>
@@ -39,14 +65,10 @@ class ReviewSummary extends React.Component {
           <div id="1Star"> 1 STAR BAR HERE </div>
         </div>
         <div id="AggregatedReviews">
-          <div id="AvgRating"> NUMBER HERE </div>
-          <div id="AvgStars"> STARS HERE </div>
-          <div id="TotalReviews">2,129 reviews</div>
+          <AggregatedReviews reviews={reviews} average={average}/>
         </div>
         <div id="Snippets">
-          <div id="Ease"> <span class="title"> Ease of Use </span> text from a review here</div>
-          <div id="Value"> <span class="title"> Value </span> text from a review here</div>
-          <div id="Design/Style"> <span class="title"> Design/Style </span> text from a review here</div>
+          <Snippets reviews={reviews}/>
         </div>
       </div>
     );  

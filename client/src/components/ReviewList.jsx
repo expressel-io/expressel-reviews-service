@@ -1,23 +1,34 @@
-import React from 'react';
-import IndividualReviews from './IndividualReviews.jsx';
+const React = require('react');
+const PropTypes = require('prop-types');
+const IndividualReviews = require('./IndividualReviews');
 
-class ReviewList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      itemId: 1,
-    };
-  }
+const ReviewList = (props) => {
+  const {
+    reviews,
+    onClick,
+  } = props;
+  return (
+    <div className="ReviewList">
+      { reviews.map((review) => {
+        return (
+          <IndividualReviews review={review} />
+        );
+      })}
+      <button type="button" onClick={onClick}>
+        ALL REVIEWS
+      </button>
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <div className="ReviewList">
-        { props.reviews.map((review) => {
-          return <IndividualReviews review={review} onClick={props.onClick} />;
-        })}
-      </div>
-    );
-  }
-}
+ReviewList.propTypes = {
+  reviews: PropTypes.arrayof(PropTypes.object),
+  onClick: PropTypes.func,
+};
+
+ReviewList.defaultProps = {
+  reviews: [],
+  // onClick: {},
+};
 
 export default ReviewList;

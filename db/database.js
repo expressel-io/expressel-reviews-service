@@ -9,11 +9,6 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
-// Add Macbook Pro info as first item
-// const addMacbook = () => {
-
-// }
-
 const getAllReviews = (array, callback) => {
   const query = 'SELECT * FROM itemReviews WHERE item_id = ? ;';
   connection.query(query, array, (err, results) => {
