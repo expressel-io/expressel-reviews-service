@@ -33,9 +33,9 @@ const connection = require('./database');
 //   itemId: 1,
 // };
 
-const generateMacbook = () => {
-  connection.query('INSERT INTO items (id, name) VALUES (item, 1);');
-};
+// const generateMacbook = () => {
+//   connection.query('INSERT INTO items (id, name) VALUES (item, 1);');
+// };
 
 const sources = ['Newegg.com', 'Costco.com', 'Target.com', 'Ebay.com', 'Walmart.com'];
 
@@ -64,9 +64,9 @@ const generateReviews = (itemId) => {
 const generateItems = (num) => {
   for (let item = 2; item < num; item += 1) {
     connection.query('INSERT INTO items (id, name) VALUES (item, ?)', [faker.lorem.words()]);
-    generateReviews(num);
+    generateReviews(item);
   }
 };
 
-generateMacbook();
+// generateMacbook();
 generateItems(100);
