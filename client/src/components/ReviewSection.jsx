@@ -1,7 +1,8 @@
 const React = require('react');
 const axios = require('axios');
-const ReviewSummary = require('./ReviewSummary');
-const ReviewList = require('./ReviewList');
+
+import ReviewSummary from './ReviewSummary';
+import ReviewList from './ReviewList';
 
 class ReviewSection extends React.Component {
   constructor(props) {
@@ -33,6 +34,7 @@ class ReviewSection extends React.Component {
       .catch((error) => {
         console.log('There was an error getting the initial reviews: ', error);
       });
+    console.log('get first reviews called');
   }
 
   getAllReviews() {
@@ -68,10 +70,10 @@ class ReviewSection extends React.Component {
 
   render() {
     const { reviews, average } = this.state;
-    console.log(reviews, 'reviewsandavg', average, this.handleGetAllReviewsClick);
     return (
-      <div>
-
+      <div className='ReviewComponent'>
+        <ReviewSummary reviews={reviews} average={average} />
+        <ReviewList reviews={reviews} onClick={this.handleGetAllReviewsClick} />
       </div>
     );
   }
@@ -79,5 +81,6 @@ class ReviewSection extends React.Component {
 
 export default ReviewSection;
 
-// reviews={reviews} average={average}
-//  reviews={reviews} onClick={this.handleGetAllReviewsClick} 
+//  
+// 
+// 

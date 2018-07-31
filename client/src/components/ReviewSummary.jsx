@@ -1,7 +1,9 @@
-const React = require('react');
+import React from 'react';
+import AggregatedReviews from './AggregatedReviews';
+import Snippets from './ReviewSnippets';
+import Styles from '../../dist/Reviews.css';
+
 const axios = require('axios');
-const AggregatedReviews = require('./AggregatedReviews');
-const Snippets = require('./ReviewSnippets');
 
 // import { Platform, StyleSheet, Text, View } from 'react-native';
 
@@ -53,28 +55,30 @@ class ReviewSummary extends React.Component {
   }
 
   render() {
-    const { average, reviews } = props;
+    console.log(this.props, 'this.props');
     return (
-      <div class='ReviewSummary'>
+      <div className='ReviewSummary'>
         <h2>
           Reviews Summary
         </h2>
         <div id="Bars">
           <div id="5Stars"> 5 STAR BAR HERE </div>
-          <div id="4Stars"> 4 STAR BAR HERE </div>
-          <div id="3Stars"> 3 STAR BAR HERE </div>
-          <div id="2Stars"> 2 STAR BAR HERE </div>
-          <div id="1Star"> 1 STAR BAR HERE </div>
         </div>
         <div id="AggregatedReviews">
-          <AggregatedReviews reviews={reviews} average={average} />
+          <AggregatedReviews reviews={this.props.reviews} average={this.props.average} />
         </div>
         <div id="Snippets">
-          <Snippets reviews={reviews} />
+          <Snippets reviews={this.props.reviews} />
         </div>
       </div>
     );
   }
 }
 
+// console.log(ReviewSummary, 'reviewsummaru in rsumm');
+
+
 export default ReviewSummary;
+
+//
+//

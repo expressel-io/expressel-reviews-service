@@ -1,7 +1,8 @@
 const React = require('react');
-const Stars = require('./Stars');
+import Stars from './Stars';
 
 const AggregatedReviews = (props) => {
+  console.log(props, 'props in ar');
   const { average, reviews } = props;
   return (
     <div className="AggregatedReviews">

@@ -5,7 +5,9 @@ const HalfFilledStar = require('../../dist/halfFilledStar.png');
 const EmptyStar = require('../../dist/emptyStar.png');
 
 const Stars = (props) => {
+
   const { rating } = props;
+  console.log(props, rating, 'props and rating in stars');
   let starNum = rating;
   for (let i = 0; i < 5; i += 1) {
     if (starNum > (1 / 2)) {
@@ -17,6 +19,8 @@ const Stars = (props) => {
       $(this).closest('.Stars').append(<img src={EmptyStar} alt="EmptyStar" />);
     }
   }
+  return null;
+
 };
 
 export default Stars;
