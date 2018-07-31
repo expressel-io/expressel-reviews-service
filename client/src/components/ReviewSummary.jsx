@@ -56,7 +56,9 @@ class ReviewSummary extends React.Component {
     const { average, reviews } = props;
     return (
       <div class='ReviewSummary'>
-      <h2>Reviews Summary</h2>
+        <h2>
+          Reviews Summary
+        </h2>
         <div id="Bars">
           <div id="5Stars"> 5 STAR BAR HERE </div>
           <div id="4Stars"> 4 STAR BAR HERE </div>
@@ -65,14 +67,14 @@ class ReviewSummary extends React.Component {
           <div id="1Star"> 1 STAR BAR HERE </div>
         </div>
         <div id="AggregatedReviews">
-          <AggregatedReviews reviews={reviews} average={average}/>
+          <AggregatedReviews reviews={reviews} average={average} />
         </div>
         <div id="Snippets">
-          <Snippets reviews={reviews}/>
+          <Snippets reviews={reviews} />
         </div>
       </div>
-    );  
+    );
   }
-};
+}
 
 export default ReviewSummary;

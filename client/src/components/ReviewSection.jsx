@@ -23,7 +23,7 @@ class ReviewSection extends React.Component {
 
   getFirstReviews() {
     const { itemId } = this.state;
-    axios.get(`/api/${itemId}/reviews/first`)
+    axios.get(`/api/${itemId}reviews/first`)
       .then((response) => {
         console.log(response.data);
         this.setState({
@@ -68,13 +68,16 @@ class ReviewSection extends React.Component {
 
   render() {
     const { reviews, average } = this.state;
+    console.log(reviews, 'reviewsandavg', average, this.handleGetAllReviewsClick);
     return (
       <div>
-        <ReviewSummary reviews={reviews} average={average} />
-        <ReviewList reviews={reviews} onClick={this.handleGetAllReviewsClick} />
+
       </div>
     );
   }
 }
 
 export default ReviewSection;
+
+// reviews={reviews} average={average}
+//  reviews={reviews} onClick={this.handleGetAllReviewsClick} 

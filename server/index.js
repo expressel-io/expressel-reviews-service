@@ -13,10 +13,12 @@ app.use(bodyParser.urlencoded({
 // set up environmental variable
 const PORT = process.env.PORT || 3002;
 
-// serve static files
-app.use('/static', express.static(path.join(__dirname, 'dist')));
+console.log(__dirname);
 
-// test to see if get requests work
+// serve static files
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
+// tes t to see if get requests work
 app.get(() => {
   console.log('Get is working!');
 });
@@ -35,7 +37,7 @@ app.get('/api/:itemId/reviews', (req, res) => {
   });
 });
 
-app.get('/api/:itemId/reviews/first', (req, res) => {
+app.get('/api/:itemIdreviews/first', (req, res) => {
   console.log(req.params.itemId, 'itemId');
   db.getFirstReviews([req.params.itemId], (error, results) => {
     if (error) {

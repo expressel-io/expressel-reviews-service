@@ -7,6 +7,7 @@ const ReviewList = (props) => {
     reviews,
     onClick,
   } = props;
+  console.log(onClick);
   return (
     <div className="ReviewList">
       { reviews.map((review) => {

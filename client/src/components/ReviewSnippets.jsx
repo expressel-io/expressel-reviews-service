@@ -7,5 +7,5 @@ const ReviewSnippets = (props) => {
     //<div id="DesignAndStyle"> <span class="title"> Design and Style </span> text from a review here</div>
   );
 };
-
+//commen ting
 export default ReviewSnippets;
