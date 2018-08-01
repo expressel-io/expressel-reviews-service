@@ -1,13 +1,13 @@
+import IndividualReviews from './IndividualReviews';
+
 const React = require('react');
 const PropTypes = require('prop-types');
-import IndividualReviews from './IndividualReviews';
 
 const ReviewList = (props) => {
   const {
     reviews,
     onClick,
   } = props;
-  console.log(onClick);
   return (
     <div className="ReviewList">
       { reviews.map((review) => {

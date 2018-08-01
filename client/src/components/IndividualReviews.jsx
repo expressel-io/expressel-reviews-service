@@ -1,6 +1,5 @@
 import Stars from './Stars';
 
-const $ = require('jquery');
 const React = require('react');
 
 const IndividualReviews = (props) => {
@@ -12,14 +11,14 @@ const IndividualReviews = (props) => {
     text,
   } = review;
 
-  let starNum = rating;
   return (
     <div className="IndividualReview">
       <h3 className="Title">
         {title}
       </h3>
       <div className="Source">
-        &bull; {source}
+        &bull;
+        {source}
       </div>
       <div className="Date">
         

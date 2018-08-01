@@ -40,9 +40,9 @@ const connection = require('./database');
 const sources = ['Newegg.com', 'Costco.com', 'Target.com', 'Ebay.com', 'Walmart.com'];
 
 const generateReviews = (itemId) => {
-  const randomNumber = Math.floor(Math.random() * Math.floor(100));
+  const randomNumber = Math.ceil(Math.random() * Math.floor(100));
   for (let i = 0; i < randomNumber; i += 1) {
-    const rating = Math.floor(Math.random() * 5);
+    const rating = Math.ceil(Math.random() * 5);
     const title = faker.lorem.sentence();
     const date = faker.date.past();
     const text = faker.lorem.paragraphs();

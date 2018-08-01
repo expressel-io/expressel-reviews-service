@@ -1,5 +1,4 @@
 const React = require('react');
-//const $ = require('jquery');
 
 const Stars = (props) => {
   // return (
@@ -13,7 +12,6 @@ const Stars = (props) => {
   // );
   const { rating } = props;
   let starNum = rating;
-  console.log(starNum, 'starnum');
   const stars = [];
   for (let i = 0; i < 5; i += 1) {
     if (starNum > (1 / 2)) {

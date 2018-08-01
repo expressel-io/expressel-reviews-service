@@ -77,10 +77,9 @@ class ReviewSection extends React.Component {
 
   render() {
     const { allReviews, renderedReviews, average } = this.state;
-    console.log(average, 'avg');
     return (
       <div className="ReviewComponent">
-        <ReviewSummary reviews={allReviews} average={average.average}/>
+        <ReviewSummary reviews={allReviews} average={average.average} />
         <ReviewList reviews={renderedReviews} onClick={this.handleGetAllReviewsClick} />
       </div>
     );
