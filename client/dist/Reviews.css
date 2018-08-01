@@ -2,21 +2,27 @@
   font-color: #212121;
   height: 100%;
   background-color: #fff;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  flex-direction: column;
   font-family: 'Roboto',sans-serif;
-  font-size: 34px;
+  font-size: 14px;
   margin: 0;
+  padding: 0;
+  position: relative;
   -webkit-font-smoothing: antialiased;
+}
+
+h2 {
+  font-weight: 550;
+  font-size: 1.5em;
+  letter-spacing: 0.5px;
 }
 
 div {
   display: block;
+}
+
+h3 {
+  font-size: 1.14em;
+  font-weight: 750;
 }
 
 .AggregatedReviews {
@@ -44,10 +50,9 @@ div {
   padding: 16px 16px 0;
 }
 
-.Title {
+.title {
   font-weight: 700;
   display: block;
-  font-size: 24px;
   -webkit-margin-before: 1em;
   -webkit-margin-after: 1em;
   -webkit-margin-start: 0px;
@@ -55,8 +60,13 @@ div {
   color: rgba(0,0,0,0.87);
 }
 
+.snippetTitle {
+  display: inline;
+  font-weight: bold;
+}
+
 .Source {
-  font-color: rgba(0,0,0,0.54);
+  color: rgba(0,0,0,0.54);
   margin-top: 8px;
 }
 
@@ -75,6 +85,27 @@ div {
   color: rgba(0,0,0,0.87);
 }
 
-.ReviewSnippets {
+.allReviewsButton {
+  color: #4187ED; 
+  font-weight: bold;
+}
 
+.Stars {
+  color: #F6B33B;
+}
+.AvgStars {
+  
+}
+
+#Snippets {
+  display: inline;
+}
+
+#AggregatedReviews {
+
+}
+
+#TotalReviews {
+  color: #4187ED;
+  padding: 10px;
 }
