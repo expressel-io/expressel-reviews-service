@@ -10,7 +10,7 @@ class ReviewSection extends React.Component {
     this.state = {
       renderedReviews: [],
       allReviews: [],
-      itemId: 2,
+      itemId: '',
       average: '',
     };
     this.getAllReviews = this.getAllReviews.bind(this);
@@ -20,6 +20,7 @@ class ReviewSection extends React.Component {
   }
 
   componentDidMount() {
+
     this.getFirstReviews();
     this.getAllReviews();
     this.getAvgRating();
@@ -27,8 +28,8 @@ class ReviewSection extends React.Component {
   }
 
   getFirstReviews() {
-    const { itemId } = this.state;
-    axios.get(`/api/${itemId}/reviews/first`)
+    let itemId = parseInt(window.location.pathname.split('/')[2]);
+    axios.get(`http://localhost:3002/api/${itemId}/reviews/first`)
       .then((response) => {
         this.setState({
           renderedReviews: response.data, //
@@ -41,8 +42,8 @@ class ReviewSection extends React.Component {
   }
 
   getAllReviews() {
-    const { itemId } = this.state;
-    axios.get(`/api/${itemId}/reviews`)
+    let itemId = parseInt(window.location.pathname.split('/')[2]);
+    axios.get(`http://localhost:3002/api/${itemId}/reviews`)
       .then((response) => {
         this.setState({
           allReviews: response.data,
@@ -54,9 +55,9 @@ class ReviewSection extends React.Component {
   }
 
   getAvgRating() {
-    const { itemId } = this.state;
+    let itemId = parseInt(window.location.pathname.split('/')[2]);
     console.log('getting avg');
-    axios.get(`/api/${itemId}/reviews/avg`)
+    axios.get(`http://localhost:3002/api/${itemId}/reviews/avg`)
       .then((response) => {
         this.setState({
           average: response.data[0],

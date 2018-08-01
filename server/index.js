@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const db = require('../db/database.js');
+const CORS = require('cors');
 
 const app = express();
 
@@ -10,16 +11,15 @@ app.use(bodyParser.urlencoded({
   extended: true,
 }));
 
+app.use(CORS());
+
 // set up environmental variable
 const PORT = process.env.PORT || 3002;
 
 // serve static files
 app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use('/item/:id', express.static(path.join(__dirname, '../client/dist')));
 
-// tes t to see if get requests work
-app.get(() => {
-  console.log('Get is working!');
-});
 
 // API calls
 
