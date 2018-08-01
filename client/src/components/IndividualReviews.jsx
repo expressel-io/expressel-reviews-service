@@ -13,18 +13,6 @@ const IndividualReviews = (props) => {
   } = review;
 
   let starNum = rating;
-
-  for (let i = 0; i < 5; i += 1) {
-    if (starNum > (1 / 2)) {
-      console.log('histars');
-      starNum -= 1;
-      $('.Stars').append(<i className="fa fa-star" aria-hidden="true"></i>);
-    } else if (starNum < 1 && starNum > (1 / 2)) {
-      $(this).closest('.Stars').html(<i className="fa fa-star-half-o" aria-hidden="true"></i>);
-    } else {
-      $(this).closest('.Stars').html(<i className="fa fa-star-o" aria-hidden="true"></i>);
-    }
-  }
   return (
     <div className="IndividualReview">
       <h3 className="Title">
@@ -37,11 +25,7 @@ const IndividualReviews = (props) => {
         
       </div>
       <div className="Stars">
-        <i className="fa fa-star" aria-hidden="true"></i>
-        <i className="fa fa-star" aria-hidden="true"></i>
-        <i className="fa fa-star" aria-hidden="true"></i>
-        <i className="fa fa-star" aria-hidden="true"></i>
-        <i className="fa fa-star" aria-hidden="true"></i>
+        <Stars rating={rating}/>
       </div>
       <div className="Text">
         {text}
