@@ -1,15 +1,6 @@
 const React = require('react');
 
 const Stars = (props) => {
-  // return (
-  //   <div className="avgstars">
-  //     <i className="fa fa-star" aria-hidden="true" />
-  //     <i className="fa fa-star" aria-hidden="true" />
-  //     <i className="fa fa-star-o" aria-hidden="true" />
-  //     <i className="fa fa-star-o" aria-hidden="true" />
-  //     <i className="fa fa-star-o" aria-hidden="true" />
-  //   </div>
-  // );
   const { rating } = props;
   let starNum = rating;
   const stars = [];
