@@ -8,8 +8,10 @@ class ReviewSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviews: [],
-      itemId: '',
+      renderedReviews: [],
+      allReviews: [],
+      itemId: 2,
+      average: '',
     };
     this.getAllReviews = this.getAllReviews.bind(this);
     this.handleGetAllReviewsClick = this.handleGetAllReviewsClick.bind(this);
@@ -19,16 +21,18 @@ class ReviewSection extends React.Component {
 
   componentDidMount() {
     this.getFirstReviews();
+    this.getAllReviews();
+    this.getAvgRating();
+    console.log('component mounted');
   }
 // pagination have it make --url/query parameters ? in the url
 
   getFirstReviews() {
     const { itemId } = this.state;
-    axios.get(`/api/${itemId}reviews/first`)
+    axios.get(`/api/${itemId}/reviews/first`)
       .then((response) => {
-        console.log(response.data);
         this.setState({
-          reviews: response.data, //
+          renderedReviews: response.data, //
         });
       })
       .catch((error) => {
@@ -42,7 +46,7 @@ class ReviewSection extends React.Component {
     axios.get(`/api/${itemId}/reviews`)
       .then((response) => {
         this.setState({
-          reviews: response.data,
+          allReviews: response.data,
         });
       })
       .catch((error) => {
@@ -52,10 +56,11 @@ class ReviewSection extends React.Component {
 
   getAvgRating() {
     const { itemId } = this.state;
+    console.log('getting avg');
     axios.get(`/api/${itemId}/reviews/avg`)
       .then((response) => {
         this.setState({
-          average: response.data,
+          average: response.data[0],
         });
       })
       .catch((error) => {
@@ -65,22 +70,22 @@ class ReviewSection extends React.Component {
 
   handleGetAllReviewsClick(e) {
     console.log('clicked!', e);
-    this.getAllReviews();
+    this.setState({
+      renderedReviews: this.state.allReviews,
+    });
   }
 
+
   render() {
-    const { reviews, average } = this.state;
+    const { allReviews, renderedReviews, average } = this.state;
+    console.log(average, 'avg');
     return (
-      <div className='ReviewComponent'>
-        <ReviewSummary reviews={reviews} average={average} />
-        <ReviewList reviews={reviews} onClick={this.handleGetAllReviewsClick} />
+      <div className="ReviewComponent">
+        <ReviewSummary reviews={allReviews} average={average.average}/>
+        <ReviewList reviews={renderedReviews} onClick={this.handleGetAllReviewsClick} />
       </div>
     );
   }
 }
 
 export default ReviewSection;
-
-//  
-// 
-// 

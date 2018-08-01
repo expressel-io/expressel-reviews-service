@@ -13,7 +13,7 @@ const React = require('react');
 
 const StarBars = (props) => {
   return (
-    <div id={props}>
+    <div className={props} className="StarBar">
       PUT BAR HERE
     </div>
   );

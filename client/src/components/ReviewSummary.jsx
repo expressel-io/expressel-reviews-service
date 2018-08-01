@@ -1,7 +1,5 @@
 import React from 'react';
 import AggregatedReviews from './AggregatedReviews';
-import Snippets from './ReviewSnippets';
-import Styles from '../../dist/Reviews.css';
 
 const axios = require('axios');
 
@@ -62,13 +60,15 @@ class ReviewSummary extends React.Component {
           Reviews Summary
         </h2>
         <div id="Bars">
-          <div id="5Stars"> 5 STAR BAR HERE </div>
+          <div id="5Stars"> STAR BAR HERE </div>
         </div>
         <div id="AggregatedReviews">
           <AggregatedReviews reviews={this.props.reviews} average={this.props.average} />
         </div>
         <div id="Snippets">
-          <Snippets reviews={this.props.reviews} />
+          <div id="Ease"> <span className="snippetTitle"> Ease of Use </span> "So easy to use." </div>
+          <div id="Value"> <span className="snippetTitle"> Value </span> "Wao great value." </div>
+          <div id="DesignAndStyle"> <span className="snippetTitle"> Design and Style </span> "Such style." </div>
         </div>
       </div>
     );

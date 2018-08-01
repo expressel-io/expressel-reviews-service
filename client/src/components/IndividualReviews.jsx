@@ -1,5 +1,6 @@
 import Stars from './Stars';
 
+const $ = require('jquery');
 const React = require('react');
 
 const IndividualReviews = (props) => {
@@ -11,16 +12,36 @@ const IndividualReviews = (props) => {
     text,
   } = review;
 
+  let starNum = rating;
+
+  for (let i = 0; i < 5; i += 1) {
+    if (starNum > (1 / 2)) {
+      console.log('histars');
+      starNum -= 1;
+      $('.Stars').append(<i className="fa fa-star" aria-hidden="true"></i>);
+    } else if (starNum < 1 && starNum > (1 / 2)) {
+      $(this).closest('.Stars').html(<i className="fa fa-star-half-o" aria-hidden="true"></i>);
+    } else {
+      $(this).closest('.Stars').html(<i className="fa fa-star-o" aria-hidden="true"></i>);
+    }
+  }
   return (
     <div className="IndividualReview">
-      <div className="Title">
+      <h3 className="Title">
         {title}
-      </div>
+      </h3>
       <div className="Source">
-        {source}
+        &bull; {source}
+      </div>
+      <div className="Date">
+        
       </div>
       <div className="Stars">
-        <Stars rating={rating} />
+        <i className="fa fa-star" aria-hidden="true"></i>
+        <i className="fa fa-star" aria-hidden="true"></i>
+        <i className="fa fa-star" aria-hidden="true"></i>
+        <i className="fa fa-star" aria-hidden="true"></i>
+        <i className="fa fa-star" aria-hidden="true"></i>
       </div>
       <div className="Text">
         {text}
@@ -28,5 +49,7 @@ const IndividualReviews = (props) => {
     </div>
   );
 };
+
+  //<Stars rating={rating} />
 
 export default IndividualReviews;
