@@ -3,40 +3,6 @@ const connection = require('./database');
 
 // Generate fake reviews
 
-// const macbookReviewOne = {
-//   id: 1,
-//   rating: 4,
-//   title: 'A fantastic update let down by a poor keyboard and lack of ports',
-//   date: 'April 15, 2018',
-//   text: '',
-//   source: '',
-//   itemId: 1,
-// };
-
-// const macbookReviewTwo = {
-//   id: 2,
-//   rating: 4,
-//   title: '',
-//   date: 'April 15, 2018',
-//   text: '',
-//   source: '',
-//   itemId: 1,
-// };
-
-// const macbookReviewThree = {
-//   id: 3,
-//   rating: 4,
-//   title: '',
-//   date: 'April 15, 2018',
-//   text: '',
-//   source: '',
-//   itemId: 1,
-// };
-
-// const generateMacbook = () => {
-//   connection.query('INSERT INTO items (id, name) VALUES (item, 1);');
-// };
-
 const sources = ['Newegg.com', 'Costco.com', 'Target.com', 'Ebay.com', 'Walmart.com'];
 
 const generateReviews = (itemId) => {
@@ -62,11 +28,10 @@ const generateReviews = (itemId) => {
 // Should match up foreign key but hard coding item ids to match
 // Add generated data to the database
 const generateItems = (num) => {
-  for (let item = 2; item < num; item += 1) {
+  for (let item = 1; item < num; item += 1) {
     connection.connection.query(`INSERT INTO items (id, name) VALUES (${item}, ?)`, [faker.lorem.words()]);
     generateReviews(item);
   }
 };
 
-// generateMacbook();
 generateItems(100);
