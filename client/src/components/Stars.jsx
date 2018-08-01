@@ -1,18 +1,16 @@
 const React = require('react');
-const $ = require('jquery');
-const FilledStar = require('../../dist/filledStar.png');
-const HalfFilledStar = require('../../dist/halfFilledStar.png');
-const EmptyStar = require('../../dist/emptyStar.png');
+//const $ = require('jquery');
 
-const Stars = (props) => {
-  return ( <div className="avgstars">
-    <i className="fa fa-star" aria-hidden="true"></i>
-    <i className="fa fa-star" aria-hidden="true"></i>
-    <i className="fa fa-star-o" aria-hidden="true"></i>
-    <i className="fa fa-star-o" aria-hidden="true"></i>
-    <i className="fa fa-star-o" aria-hidden="true"></i>
+const Stars = () => {
+  return (
+    <div className="avgstars">
+      <i className="fa fa-star" aria-hidden="true" />
+      <i className="fa fa-star" aria-hidden="true" />
+      <i className="fa fa-star-o" aria-hidden="true" />
+      <i className="fa fa-star-o" aria-hidden="true" />
+      <i className="fa fa-star-o" aria-hidden="true" />
     </div>
-  )
+  );
   // const { rating } = props;
   // let starNum = rating;
   // console.log(starNum, 'starnum');

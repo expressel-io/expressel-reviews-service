@@ -10,6 +10,8 @@
   -webkit-font-smoothing: antialiased;
 }
 
+/**/
+
 h2 {
   font-weight: 550;
   font-size: 1.5em;
@@ -25,18 +27,12 @@ h3 {
   font-weight: 750;
 }
 
+/* Classes */
+
 .AggregatedReviews {
 
 }
 
-#AvgRating {
-  font-size: 28px;
-  
-}
-
-#TotalReviews {
-
-}
 
 .ReviewSummary {
   padding: 16px 16px 0;
@@ -97,13 +93,21 @@ h3 {
   
 }
 
-#Snippets {
-  display: inline;
+/* ID's */
+
+#AvgRating {
+  font-size: 28px;
 }
 
 #AggregatedReviews {
 
 }
+
+#Snippets {
+  display: inline;
+}
+
+
 
 #TotalReviews {
   color: #4187ED;

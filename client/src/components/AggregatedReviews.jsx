@@ -1,6 +1,6 @@
-const React = require('react');
-
 import Stars from './Stars';
+
+const React = require('react');
 
 const AggregatedReviews = (props) => {
   console.log(props, 'props in ar');

@@ -1,8 +1,8 @@
-const React = require('react');
-const axios = require('axios');
-
 import ReviewSummary from './ReviewSummary';
 import ReviewList from './ReviewList';
+
+const React = require('react');
+const axios = require('axios');
 
 class ReviewSection extends React.Component {
   constructor(props) {
@@ -14,9 +14,9 @@ class ReviewSection extends React.Component {
       average: '',
     };
     this.getAllReviews = this.getAllReviews.bind(this);
-    this.handleGetAllReviewsClick = this.handleGetAllReviewsClick.bind(this);
     this.getFirstReviews = this.getFirstReviews.bind(this);
     this.getAvgRating = this.getAvgRating.bind(this);
+    this.handleGetAllReviewsClick = this.handleGetAllReviewsClick.bind(this);
   }
 
   componentDidMount() {
@@ -25,7 +25,6 @@ class ReviewSection extends React.Component {
     this.getAvgRating();
     console.log('component mounted');
   }
-// pagination have it make --url/query parameters ? in the url
 
   getFirstReviews() {
     const { itemId } = this.state;
