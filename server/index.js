@@ -13,8 +13,6 @@ app.use(bodyParser.urlencoded({
 // set up environmental variable
 const PORT = process.env.PORT || 3002;
 
-console.log(__dirname);
-
 // serve static files
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
@@ -31,15 +29,26 @@ app.get('/api/:itemId/reviews', (req, res) => {
     if (error) {
       console.log('Error getting the reviews: ', error);
     } else {
-      console.log('getting reviews', results);
       res.send(results);
     }
   });
 });
 
-app.get('/api/:itemIdreviews/first', (req, res) => {
+app.get('/api/:itemId/reviews/first', (req, res) => {
   console.log(req.params.itemId, 'itemId');
   db.getFirstReviews([req.params.itemId], (error, results) => {
+    if (error) {
+      console.log('Error getting the first reviews: ', error);
+    } else {
+      console.log('getting first reviews');
+      res.send(results);
+    }
+  });
+});
+
+app.get('/api/:itemId/reviews/avg', (req, res) => {
+  console.log(req.params.itemId, 'itemId in avgreviews');
+  db.getAvgReviews([req.params.itemId], (error, results) => {
     if (error) {
       console.log('Error getting the first reviews: ', error);
     } else {

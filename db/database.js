@@ -31,8 +31,20 @@ const getFirstReviews = (array, callback) => {
   });
 };
 
+const getAvgReviews = (array, callback) => {
+  const query = 'SELECT AVG(rating) AS average FROM itemReviews WHERE item_id = ? ;';
+  connection.query(query, array, (err, results) => {
+    if (err) {
+      console.log('Error getting avg reviews in db: ', err);
+    } else {
+      callback(null, results);
+    }
+  });
+};
+
 module.exports = {
   connection,
   getAllReviews,
   getFirstReviews,
+  getAvgReviews,
 };
