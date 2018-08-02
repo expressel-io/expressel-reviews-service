@@ -1,7 +1,7 @@
+import PropTypes from 'prop-types';
 import IndividualReviews from './IndividualReviews';
 
 const React = require('react');
-const PropTypes = require('prop-types');
 
 const ReviewList = (props) => {
   const {
@@ -15,7 +15,7 @@ const ReviewList = (props) => {
           <IndividualReviews review={review} />
         );
       })}
-      <button className="allReviewsButton" type="button" onClick={onClick}>
+      <button id="allReviewsButton" type="button" onClick={onClick}>
         ALL REVIEWS
       </button>
     </div>
@@ -23,13 +23,13 @@ const ReviewList = (props) => {
 };
 
 ReviewList.propTypes = {
-  //reviews: PropTypes.arrayof(PropTypes.object),
-  //onClick: PropTypes.func,
+  reviews: PropTypes.array,
+  onClick: PropTypes.func,
 };
 
 ReviewList.defaultProps = {
-  //reviews: [],
-  // onClick: {},
+  reviews: [],
+  onClick: {},
 };
 
 export default ReviewList;

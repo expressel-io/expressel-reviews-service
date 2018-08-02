@@ -1,5 +1,6 @@
 import Stars from './Stars';
 
+const moment = require('moment');
 const React = require('react');
 
 const IndividualReviews = (props) => {
@@ -9,6 +10,7 @@ const IndividualReviews = (props) => {
     source,
     rating,
     text,
+    date
   } = review;
 
   return (
@@ -20,11 +22,13 @@ const IndividualReviews = (props) => {
         &bull;
         {source}
       </div>
-      <div className="Date">
-        
-      </div>
-      <div className="Stars">
-        <Stars rating={rating}/>
+      <div className="StarsAndDateContainer">
+        <div className="Stars">
+          <Stars rating={rating} />
+        </div>
+        <div className="Date">
+          {moment(date).format("MMMM D, YYYY")}
+        </div>
       </div>
       <div className="Text">
         {text}
@@ -32,7 +36,5 @@ const IndividualReviews = (props) => {
     </div>
   );
 };
-
-  //<Stars rating={rating} />
 
 export default IndividualReviews;

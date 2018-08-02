@@ -58,5 +58,16 @@ app.get('/api/:itemId/reviews/avg', (req, res) => {
   });
 });
 
+app.get('/api/:itemId/reviews/ratings/:i', (req, res) => {
+  console.log(req.params.itemId, 'itemId in total ratings');
+  db.getTotalReviewsPerRating([req.params.i, req.params.itemId, req.params.i], (error, results) => {
+    if (error) {
+      console.log('Error getting the rating counts: ', error);
+    } else {
+      console.log('getting rating counts reviews');
+      res.send(results);
+    }
+  });
+});
 // start server
 app.listen(PORT, () => { console.log(`Listening at ${PORT}!`); });

@@ -1,7 +1,6 @@
 import React from 'react';
 import AggregatedReviews from './AggregatedReviews';
-
-// import { Platform, StyleSheet, Text, View } from 'react-native';
+import StarBars from './StarBars';
 
 // StarBars => get Math.floor of total number of x stars compared to total ratings
 // fill up bar to same % of gold (CSS)
@@ -10,29 +9,23 @@ import AggregatedReviews from './AggregatedReviews';
 // x is bold
 // % is normal weight
 
-// AggregatedReviews
-// AvgRating => reduce ratings rating to avg, display in AvgRating
-// AvgStars => reduce ratings to avg, depending on rating
-// if rating is in ranges change the number of colored stars
-// ie 5 stars = full five stars
-// TotalReviews => ${Review count} reviews in blue
-
 // Snippets
 // Titles bold
 // search through files, find keywords and return close sentence featuring words
 // if words not featured don't show the corresponding div
 
 const ReviewSummary = (props) => {
+  const { average, reviews, ratingsCounts } = props;
   return (
     <div className="ReviewSummary">
       <h2>
         Reviews Summary
       </h2>
       <div id="Bars">
-        <div id="5Stars"> STAR BAR HERE </div>
+        <StarBars ratingsCounts={ratingsCounts}/>
       </div>
       <div id="AggregatedReviews">
-        <AggregatedReviews reviews={props.reviews} average={props.average} />
+        <AggregatedReviews reviews={reviews} average={average} />
       </div>
       <div id="Snippets">
         <div id="Ease"> <span className="snippetTitle"> Ease of Use </span> "So easy to use." </div>
@@ -43,10 +36,4 @@ const ReviewSummary = (props) => {
   );
 };
 
-// console.log(ReviewSummary, 'reviewsummaru in rsumm');
-
-
 export default ReviewSummary;
-
-//
-//

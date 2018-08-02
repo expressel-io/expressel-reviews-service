@@ -47,6 +47,7 @@ h3 {
 }
 
 .title {
+  margin: 10px 0px 10px;
   font-weight: 700;
   display: block;
   -webkit-margin-before: 1em;
@@ -63,7 +64,6 @@ h3 {
 
 .Source {
   color: rgba(0,0,0,0.54);
-  margin-top: 8px;
 }
 
 .Date {
@@ -71,37 +71,47 @@ h3 {
   flex-direction: row;
   box-sizing: border-box!important;
   display: flex!important;
-  color: rgba(0,0,0,0.87);
+  color: rgba(0,0,0,0.54);
 }
 
 .Text {
   font-color: #2B2B2B;
-  margin-top: 16px;
+  margin-top: 8px;
   line-height: 1.72em;
   color: rgba(0,0,0,0.87);
 }
 
-.allReviewsButton {
-  color: #4187ED; 
-  font-weight: bold;
-}
-
 .Stars {
   color: #F6B33B;
+  float: left;
+  margin-right: 10px;
 }
 
-.AvgStars {
+.StarsAndDateContainer {
   
 }
 
 /* ID's */
 
+#allReviewsButton {
+  color: #4187ED; 
+  font-weight: bold;
+}
+
 #AvgRating {
   font-size: 28px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#AvgStars {
+  color: #F6B33B;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #AggregatedReviews {
-
+  display: inline;
 }
 
 #Snippets {
@@ -112,5 +122,6 @@ h3 {
 
 #TotalReviews {
   color: #4187ED;
-  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
