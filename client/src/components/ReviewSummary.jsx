@@ -21,16 +21,18 @@ const ReviewSummary = (props) => {
       <h2>
         Reviews Summary
       </h2>
-      <div id="Bars">
-        <StarBars ratingsCounts={ratingsCounts}/>
-      </div>
-      <div id="AggregatedReviews">
-        <AggregatedReviews reviews={reviews} average={average} />
-      </div>
-      <div id="Snippets">
-        <div id="Ease"> <span className="snippetTitle"> Ease of Use </span> "So easy to use." </div>
-        <div id="Value"> <span className="snippetTitle"> Value </span> "Wao great value." </div>
-        <div id="DesignAndStyle"> <span className="snippetTitle"> Design and Style </span> "Such style." </div>
+      <div className="ReviewSummaryElements">
+        <div id="AggregatedReviews">
+          <AggregatedReviews reviews={reviews} average={average} />
+        </div>
+        <div id="Bars">
+          <StarBars ratingsCounts={ratingsCounts}/>
+        </div>
+        <div id="Snippets">
+          <div id="Ease"> <span className="snippetTitle"> Ease of Use </span> "So easy to use." </div>
+          <div id="Value"> <span className="snippetTitle"> Value </span> "Wao great value." </div>
+          <div id="DesignAndStyle"> <span className="snippetTitle"> Design and Style </span> "Such style." </div>
+        </div>
       </div>
     </div>
   );

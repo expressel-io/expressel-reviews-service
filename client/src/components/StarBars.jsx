@@ -1,5 +1,7 @@
 const React = require('react');
 
+import StarBarFiller from './StarBarFiller';
+
 // map through the number of expected bars (5)
 // for each one place a grey bar same width
 // place a gold bar relative to the amount of ratings re: total ratings on top of the grey bar
@@ -17,14 +19,13 @@ const StarBars = (props) => {
   } = props;
   if (ratingsCounts.length === 5) {
     return (
-      <div className="StarBar">
+      <div className="StarBars">
         {ratingsCounts.map((ratingCount) => {
-          console.log(Object.values(ratingCount));
           let count = Object.values(ratingCount);
-          console.lo
+          let num = Object.keys(ratingCount)
           return (
-            <div>
-              BAR {count}% 
+            <div className="StarBar">
+              <div className="StarBarNum">{num}</div> <div className="StarBarOuterBar"> <StarBarFiller percentage={count} /> </div> <div className="StarBarPercentage"> {count}% </div>
             </div>
           )
         })}
