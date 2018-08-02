@@ -33,17 +33,94 @@ h3 {
 
 }
 
-
-.ReviewSummary {
-  padding: 16px 16px 0;
-}
-
 .AllReviewsButton {
   
 }
 
+.Date {
+  margin-top: 8px;
+  flex-direction: row;
+  box-sizing: border-box!important;
+  display: flex!important;
+  color: rgba(0,0,0,0.54);
+}
+
 .ReviewList {
   padding: 16px 16px 0;
+  margin-top: 10px;
+}
+
+.ReviewSummary {
+  padding: 16px 16px 0;
+  width: 100%;
+  display: inline-block;
+}
+
+.ReviewSummaryElements{
+  width: 100%;
+  overflow: hidden;
+}
+
+.snippetTitle {
+  display: inline;
+  font-weight: bold;
+}
+
+.Source {
+  color: rgba(0,0,0,0.54);
+}
+
+.StarBar {
+  display: inline-block;
+  width: 200px;
+}
+
+.StarBars {
+  display: inline-block;
+  width: 200px;
+}
+
+.StarBarFiller {
+  background: #F6B33B; 
+  color: #F6B33B;
+  height: 100%;
+  border-radius: inherit;
+  float: left;
+}
+
+.StarBarNum {
+  color: rgba(0,0,0,0.22);
+  font-weight: bold;  
+  float: left;
+}
+
+.StarBarPercentage {
+  color: rgba(0,0,0,0.34);
+  float: right;
+}
+
+.StarBarOuterBar {
+  width: 150px;
+  height: 10px;
+  border-radius: 50px;
+  background-color: rgba(0,0,0,0.04);
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 3.5px;
+  float: left;
+}
+
+.Stars {
+  color: #F6B33B;
+  float: left;
+  margin-right: 10px;
+}
+
+.Text {
+  font-color: #2B2B2B;
+  margin-top: 8px;
+  line-height: 1.72em;
+  color: rgba(0,0,0,0.87);
 }
 
 .title {
@@ -57,51 +134,19 @@ h3 {
   color: rgba(0,0,0,0.87);
 }
 
-.snippetTitle {
-  display: inline;
-  font-weight: bold;
-}
-
-.Source {
-  color: rgba(0,0,0,0.54);
-}
-
-.Date {
-  margin-top: 8px;
-  flex-direction: row;
-  box-sizing: border-box!important;
-  display: flex!important;
-  color: rgba(0,0,0,0.54);
-}
-
-.Text {
-  font-color: #2B2B2B;
-  margin-top: 8px;
-  line-height: 1.72em;
-  color: rgba(0,0,0,0.87);
-}
-
-.Stars {
-  color: #F6B33B;
-  float: left;
-  margin-right: 10px;
-}
-
-.StarsAndDateContainer {
-  
-}
-
 /* ID's */
 
 #allReviewsButton {
   color: #4187ED; 
   font-weight: bold;
+  margin-top: 15px;
 }
 
 #AvgRating {
   font-size: 28px;
   margin-top: 10px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 #AvgStars {
@@ -112,16 +157,29 @@ h3 {
 
 #AggregatedReviews {
   display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 100px;
+}
+
+#Bars {
+  float: left;
+  margin-right: 20px;
+  margin-left: 20px;
+  width:200px;
+  height: 100px;
+  display: inline-block;
 }
 
 #Snippets {
-  display: inline;
+  display: inline-block;
+  height:;
 }
-
-
 
 #TotalReviews {
   color: #4187ED;
   margin-top: 10px;
   margin-bottom: 10px;
+  text-align: center;
 }
