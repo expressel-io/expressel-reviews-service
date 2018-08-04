@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  mysql:
+    build: ./db
+    healthcheck:
+      test: "exit 0"
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: null
+      MYSQL_DATABASE: reviews
+
+  expressel-reviews:
+    build: .
+    depends_on:
+      mysql:
+        condition: service_healthy
+    entrypoint:
+      -  /usr/local/bin/docker-entrypoint.sh
+    ports:
+      -  "3002:3002"
